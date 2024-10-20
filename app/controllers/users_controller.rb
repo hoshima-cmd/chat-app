@@ -1,6 +1,6 @@
-class UsersController < ApplicationController
-  def edit
-  end
+class ApplicationController < ActionController::Base
+  before_action :authenticate_user!
+end
 
   def update
     if current_user.update(user_params)
